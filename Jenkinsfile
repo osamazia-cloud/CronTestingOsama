@@ -8,7 +8,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                        date
+                        date_now=$(date +%Y-%m-%d)
                     """
                 }
             }
