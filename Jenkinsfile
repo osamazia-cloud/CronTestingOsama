@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment { 
+        BRANCH_NAME = 'main'
+    }
     stages {
         stage ('Release Branch') {
             steps {
@@ -9,7 +12,7 @@ pipeline {
                     git push --set-upstream origin ${env.BRANCH_NAME}-\$date_now
                 """
             }
-            
+
        } 
     } 
 }
