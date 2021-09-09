@@ -9,7 +9,7 @@ pipeline {
                 script {
                     sh """
                         date_now=\$(date +%Y-%m-%d)
-                        echo $date_now 
+                        echo \$date_now 
                     """
                 }
             }
