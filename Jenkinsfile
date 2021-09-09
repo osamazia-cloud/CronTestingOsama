@@ -7,7 +7,8 @@ pipeline {
     stages {
         stage ('Release Branch') {
             steps {
-                sh """#!/bin/bash
+                sh """
+                    #!/bin/bash
                     date_now=$(date +%Y-%m-%d)
                     git checkout -b ${env.BRANCH_NAME}-\$date_now
                     git push --set-upstream origin ${env.BRANCH_NAME}-\$date_now
