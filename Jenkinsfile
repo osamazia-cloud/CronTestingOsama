@@ -12,7 +12,6 @@ pipeline {
                     git push --set-upstream origin ${env.BRANCH_NAME}-\$date_now
                 """
             }
-
        } 
     } 
 }
