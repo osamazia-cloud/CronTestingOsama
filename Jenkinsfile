@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage ('Release Branch') {
             steps {
-                git(url: 'https://github.com/osamazia-cloud/CronTestingOsama.git',credentialsId: "${credentials}")
+                git(url: 'https://github.com/osamazia-cloud/CronTestingOsama.git',credentialsId: "${env.credentials}")
                 script {
                     sh """
                         date_now=\$(date +%Y-%m-%d)
