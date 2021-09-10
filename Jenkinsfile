@@ -13,6 +13,8 @@ pipeline {
                         git checkout -b ${env.BRANCH_NAME}-${BUILD_NUMBER}-\$date_now
                         git remote rm origin
                         git remote add origin git@github.com:osamazia-cloud/CronTestingOsama.git
+                        ssh-keygen -R domain.com
+                        ssh-keyscan -t rsa domain.com >> ~/.ssh/known_hosts
                         git push --set-upstream origin ${env.BRANCH_NAME}-${BUILD_NUMBER}-\$date_now
                     """
                     
