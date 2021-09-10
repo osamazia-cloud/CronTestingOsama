@@ -2,11 +2,12 @@ pipeline {
     agent any
     environment { 
         BRANCH_NAME = 'main'
+        credentials = 'Jenkins-Test'
     }
     stages {
         stage ('Release Branch') {
             steps {
-                git(url: 'https://github.com/osamazia-cloud/CronTestingOsama.git',credentialsId: "Jenkins-Test")
+                git(url: 'https://github.com/osamazia-cloud/CronTestingOsama.git',credentialsId: "${credentials}")
                 script {
                     sh """
                         date_now=\$(date +%Y-%m-%d)
