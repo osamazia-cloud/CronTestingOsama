@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage ('Release Branch') {
             steps {
-                withCredentials([string(credentialsId: 'Secret_Key', variable: 'SECRET')]) {
+                withCredentials([string(credentialsId: 'Secret_Key', variable: 'TOKEN')]) {
                     sh """
                         date_now=\$(date +%Y-%m-%d)
                         git checkout -b ${env.BRANCH_NAME}-${BUILD_NUMBER}-\$date_now
