@@ -10,7 +10,7 @@ pipeline {
                 git url: "ssh://jenkins@your-git-repo:12345/your-git-project.git",
                 credentialsId: 'Secret_Key',
                 sh 'date_now=\$(date +%Y-%m-%d)'
-                branch: "${env.BRANCH_NAME}-\$date_now",
+                branch: "${env.BRANCH_NAME}-\$date_now"
                 sh 'git tag -a tagName -m "Your tag comment"'
                 sh 'git commit -am "Merged develop branch to master'
                 sh "git push origin ${env.BRANCH_NAME}"
