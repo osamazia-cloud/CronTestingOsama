@@ -7,7 +7,9 @@ pipeline {
     stages {
         stage ('Release Branch') {
             steps {
-                git(url: 'https://github.com/osamazia-cloud/CronTestingOsama.git',credentialsId: "${env.credentials}")
+                withCredentials([string(credentialsId: 'Jenkins-Test', variable: 'TOKEN')]) {
+
+                }
                 
             }
        } 
