@@ -12,7 +12,6 @@ pipeline {
                     date_now=\$(date +%Y-%m-%d)
                     ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
                     eval `ssh-agent`
-                    ssh-add
                     git checkout -b ${env.BRANCH_NAME}-${BUILD_NUMBER}-\$date_now
                     git push --set-upstream origin ${env.BRANCH_NAME}-${BUILD_NUMBER}-\$date_now
                 """
