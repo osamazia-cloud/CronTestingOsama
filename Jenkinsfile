@@ -10,9 +10,9 @@ pipeline {
                 
                 sh """
                     date_now=\$(date +%Y-%m-%d)
-                    git remote rm origin
                     ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-                    git remote add origin git@github.com:osamazia-cloud/CronTestingOsama.git
+                    eval "$(ssh-agent -s)"
+                    ssh-add
                     git checkout -b ${env.BRANCH_NAME}-${BUILD_NUMBER}-\$date_now
                     git push --set-upstream origin ${env.BRANCH_NAME}-${BUILD_NUMBER}-\$date_now
                 """
