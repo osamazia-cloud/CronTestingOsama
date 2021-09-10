@@ -18,7 +18,7 @@ pipeline {
                 """
                 
             }
-       } eval `ssh-agent`
+       }
     } 
 }
 
