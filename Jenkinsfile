@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage ('Release Branch') {
             steps {
-                withCredentials([string(credentialsId: 'git-cre', variable: 'TOKEN')]) {
+                withCredentials([usernamePassword(credentialsId: 'git-cre',usernameVariable: 'username', passwordVariable: 'password')]){
                     sh """
                     date_now=\$(date +%Y-%m-%d)
                     git remote rm origin
