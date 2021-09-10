@@ -6,11 +6,12 @@ pipeline {
     stages {
         stage ('Release Branch') {
             steps {
+                git(credentialsId: 'Jenkins-Test')
                 script {
                     sh """
                         date_now=\$(date +%Y-%m-%d)
                         git checkout -b ${env.BRANCH_NAME}-${BUILD_NUMBER}-\$date_now
-                        git push
+                        git push --set-upstream origin ${env.BRANCH_NAME}-${BUILD_NUMBER}-\$date_now
                     """
                 }
             }
