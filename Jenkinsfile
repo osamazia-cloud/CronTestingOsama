@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment { 
         BRANCH_NAME = 'main'
-        credentials = 'Jenkins-Test'
+        credentials = 'test-jenkins'
     }
     stages {
         stage ('Release Branch') {
