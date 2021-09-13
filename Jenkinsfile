@@ -11,8 +11,8 @@ pipeline {
                     sh """
                     date_now=\$(date +%d-%m-%Y)
                     git remote set-url origin https://\$username:\$password@github.com/osamazia-cloud/CronTestingOsama.git
-                    git checkout -b ${env.BRANCH_NAME}-${BUILD_NUMBER}-\$date_now
-                    git push --set-upstream origin ${env.BRANCH_NAME}-${BUILD_NUMBER}-\$date_now
+                    git checkout -b ${BUILD_NUMBER}/\$date_now
+                    git push --set-upstream origin ${BUILD_NUMBER}/\$date_now
                     """
                 }
             }
