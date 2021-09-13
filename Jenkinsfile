@@ -7,7 +7,7 @@ pipeline {
                     sh """
                     date_now=\$(date +%d-%m-%Y)
                     git remote set-url origin https://\$username:\$password@github.com/osamazia-cloud/CronTestingOsama.git
-                    git checkout -b release/\$date_now
+                    git checkout -b releasee/\$date_now
                     git push --set-upstream origin release/\$date_now
                     """
                 }
