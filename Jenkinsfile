@@ -11,7 +11,6 @@ pipeline {
                     git push --set-upstream origin release/\$date_now
                     """
                     
-                    
                 }
             }
        }
