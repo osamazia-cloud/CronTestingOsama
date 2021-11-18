@@ -10,6 +10,8 @@ pipeline {
                     git checkout -b release/\$date_now
                     git push --set-upstream origin release/\$date_now
                     """
+                    
+                    
                 }
             }
        }
